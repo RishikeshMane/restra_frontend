@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Restaurant Subscription</title>
+  <!-- Iconic Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendors/iconic-fonts/flat-icons/flaticon.css">
+  <link rel="stylesheet" href="vendors/iconic-fonts/cryptocoins/cryptocoins.css">
+  <link rel="stylesheet" href="vendors/iconic-fonts/cryptocoins/cryptocoins-colors.css">
+  <!-- Bootstrap core CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jQuery UI -->
+  <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
+  <!-- Page Specific CSS (Slick Slider.css) -->
+  <link href="assets/css/slick.css" rel="stylesheet">
+  <link href="assets/css/datatables.min.css" rel="stylesheet">
+  <!-- Foodtech styles -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/subscription.css" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/fav.png">
+  <style>
+    .badgec {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+  }
+  
+  .labelc-warning[href],
+  .badgec-warning[href] {
+    background-color: #c67605;
+  }
+  #lblCartCount {
+      font-size: 12px;
+      background: #ff0000;
+      color: #fff;
+      padding: 0 5px;
+      vertical-align: top;
+      margin-left: -10px; 
+  }
+  </style>
+</head>
+
+<body >
+  <main class="body-content">
+    <div class="ms-content-wrapper ms-auth">
+        <div class="ms-auth-container" style="background-image: linear-gradient(180deg, #003D66 50%, #EC931F 50%);">
+            <div class="pricingTable">
+                <h2 class="pricingTable-title">PRICING</h2>    
+                <span> <i class=" fa fa-shopping-cart" style="font-size:30px; float: right; color: #ff8306;">
+                    <span class='badgec badgec-warning' id='lblCartCount'> 0</span></i></span>
+                <ul class="pricingTable-firstTable">
+                  <li class="pricingTable-firstTable_table" id="template1">
+                    
+                  </li><li class="pricingTable-firstTable_table" id="template2">
+                    <!-- <h1 class="pricingTable-firstTable_table__header" style="color: #D4AF37;">Gold Packege</h1>
+                    <p class="pricingTable-firstTable_table__pricing"><span>$</span><span>19</span><span>Month</span></p>
+                    <ul class="pricingTable-firstTable_table__options">
+                      <li>Unlimited Listing</li>
+                      <li>Edit Your Listing</li>
+                      <li>Approve Reviews</li>
+                      <li>Take Booking Online</li>
+                      <li>24/7 Support Service</li>
+                    </ul>
+                    <button class="pricingTable-firstTable_table__getstart" onclick="gotocart()" >Add to cart</button> -->
+                  </li><li class="pricingTable-firstTable_table" id="template3">
+                    <!-- <h1 class="pricingTable-firstTable_table__header" style="color: #878a8b;">Platinum Packege</h1>
+                    <p class="pricingTable-firstTable_table__pricing"><span>$</span><span>49</span><span>Month</span></p>
+                    <ul class="pricingTable-firstTable_table__options">
+                      <li>Unlimited Listing</li>
+                      <li>Edit Your Listing</li>
+                      <li>Approve Reviews</li>
+                    </ul>
+                    <button class="pricingTable-firstTable_table__getstart" onclick="gotocart()">Add to cart</button> -->
+                  </li>
+                </ul>
+              </div>
+          <!-- <div class="ms-auth-col">
+              <div class="section1"></div>
+          </div>
+        <div class="ms-auth-col">
+        <div class="background"></div>
+        <div class="container">
+         
+        </div>
+        </div> -->
+        </div>
+  <!-- Preloader -->
+
+  <!-- <form  method="post" class="form-container">
+    <h2>Enter Your Email</h2>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" id="femail" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Enter valid email" required>
+    
+    <button type="submit" class="btn" id="logsubmit1" onclick="checkemail(event)">Send</button>
+    <div id="messageverify" style="font: bold; color: rgb(197, 131, 8);  display: flex; justify-content: center;"></div>
+  </form> -->
+  <!-- SCRIPTS -->
+  <!-- Global Required Scripts Start -->
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/perfect-scrollbar.js">
+  </script>
+  <script src="assets/js/jquery-ui.min.js">
+  </script>
+  <script src="assets/js/login.js"></script>
+  <script src="assets/js/register.js"></script>
+  <script src="assets/js/changepass.js"></script>
+  <script src="assets/js/forgetpass.js"></script>
+  <script src="assets/js/subscription.js"></script>
+  <!-- Global Required Scripts End -->
+  <!-- Page Specific Scripts Start -->
+  <!-- <script src="assets/js/Chart.bundle.min.js">
+  </script>
+  <script src="assets/js/widgets.js"> </script>
+  <script src="assets/js/clients.js">
+  </script>
+  <script src="assets/js/Chart.Financial.js">
+  </script>
+  <script src="assets/js/d3.v3.min.js">
+  </script>
+  <script src="assets/js/topojson.v1.min.js">
+  </script>
+  <script src="assets/js/datatables.min.js">
+  </script>
+  <script src="assets/js/data-tables.js">
+  </script> -->
+  <!-- Page Specific Scripts Finish -->
+  <!-- Foodtech core JavaScript -->
+  <script src="assets/js/framework.js"></script>
+  <!-- Settings -->
+  <script src="assets/js/settings.js"></script>
+</body>
+
+</html>

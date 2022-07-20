@@ -1,0 +1,157 @@
+body {
+    
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.background {
+    background: url('../../assets/img/download.jpeg') rgba(0, 0, 0, 0.61);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    filter: blur(3px);
+}
+
+h2 {
+    font-size: 25px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: transparent;
+    box-shadow: 0 0 15px rgb(20, 20, 20);
+    border-radius: 15px;
+    width: 500px;
+    margin: 15vh auto;
+}
+
+form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+.form-item {
+    display: flex;
+    width: 90%;
+    background: transparent;
+    margin: 2px auto;
+    align-items: center;
+    border-radius: 15px;
+    border-bottom: 1px solid rgb(82, 81, 81);
+}
+.form-item:hover {
+    border: 1px solid rgb(82, 81, 81);;
+}
+input {
+    font-size: 18px;
+    width: 80%;
+    height: 30px;
+    outline: none;
+    background: transparent;
+    border: none;
+    margin: auto;
+    color: rgb(7, 7, 7);
+}
+
+
+span {
+    margin: 5px;
+    color: rgb(172, 172, 172);
+    cursor: default;
+    user-select: none;
+    background: rgba(85, 81, 81, 0.637);
+    padding: 5px;
+    border-radius: 15px;
+}
+
+button[type="submit"] {
+    width: 150px;
+    /* font-size: 20px; */
+    margin: 10px auto;
+    padding: 10px 16px;
+    /* color: white;
+    background: rgb(74, 102, 131); */
+    border: none;
+    text-align: center;
+}
+/* button[type="submit"]:hover {
+    background: #FF9030;
+} */
+p:first-of-type {
+    font-size: 18px;
+    margin: 0;
+}
+
+.options {
+    display: flex;
+    margin:  10px auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button {
+    padding: 5px 16px;
+    font-size: 18px;
+    margin: 5px 15px;
+    width: 180px;
+    color: white;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.7s ease;
+    border-radius: 30px;
+}
+
+p {
+    font-size: 18px;
+    margin: 5px;
+}
+a{
+    color: #FF9030;
+}
+
+
+@media screen and (max-width:550px) {
+    .container {
+        width: 90%;
+    }
+    
+}
+.button-62 {
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    /* font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; */
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.1;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+  }
+  
+  .button-62:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  }
+  
+  .button-62:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  }

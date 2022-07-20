@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Restaurant Form</title>
+  <!-- Iconic Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="vendors/iconic-fonts/flat-icons/flaticon.css">
+    <link href="vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jQuery UI -->
+  <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
+  <!-- Foodtech styles -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/fav.png">
+  <link href="assets/css/user.css" rel="stylesheet"> 
+</head>
+
+<body>
+
+  <!-- Main Content -->
+  <main class="body-content">
+    <div class="ms-content-wrapper ms-auth">
+      <div class="ms-auth-container">
+        <div class="ms-auth-col">
+            <div class="section1" style="height: 110%;"></div>
+        </div>
+      <div class="ms-auth-col">
+        <div class="background"></div>
+        <div class="container" style="  display: flex; background: transparent;box-shadow: 0 0 15px rgb(20, 20, 20);
+        border-radius: 15px;  margin: 3vh auto;">
+          <div class="content">
+            <h4>Resturant Details</h4>
+            <form action="" id="form">
+              <div class="user-details">
+
+              <div class="input-box" style="margin-bottom: 3px;  display : none;">
+                <span class="details">
+                  Resturant Name
+                    </span>
+                    <input type="text" placeholder="Restaurant Name" name="restraname" id="restraname" pattern = "[a-zA-Z][a-zA-Z ]+" title="Enter correct name" required>
+               </div>
+
+             <div class="input-box" style="margin-bottom: 3px; display : none;">
+                <span class="details">
+                 Owner Id
+                    </span>
+                    <input type="text" placeholder="Restaurant Owner id" name="ownerid" id="ownerid"  required>
+               </div>
+              
+                <div class="input-box" style="margin-bottom: 3px">
+                <span class="details">
+                  Select  Country 
+                    </span>
+                    <select id="countySel"  required class="form-control" style="width : 90%" oninvalid="this.setCustomValidity('Select your country')"
+                    oninput="this.setCustomValidity('')" >
+                      <option value="">Select Country</option>
+                      <!-- <option value="India">India</option> -->
+                     </select>
+                    <!-- <input type="text" placeholder="Country Name" name="country" id="country" required> -->
+                </div>
+
+                <div class="input-box" style="margin-bottom: 3px">
+                    <span class="details">
+                      Select State
+                    </span>
+                    <select id="stateSel"  required class="form-control" style="width : 90%" oninvalid="this.setCustomValidity('Select your state')"
+                    oninput="this.setCustomValidity('')" >
+                      <option value="">Please select Country first</option>
+                     </select>
+                        <!-- <input type="text" placeholder="State" id="state" name="state" required> -->
+                </div>
+    
+                <div class="input-box" style="margin-bottom: 3px">
+                  <span class="details">
+                   Select City
+                  </span>
+                  <!-- <select id="districtSel"  required class="form-control" style="width : 90%">
+                    <option value="">Please select State first</option>
+                   </select> -->
+                 <input type="text" placeholder="City" id="city" name="city" oninvalid="this.setCustomValidity('Enter Your city!')"
+                 oninput="this.setCustomValidity('')"   required>
+                 </div>
+
+                <div class="input-box" style="margin-bottom: 3px">
+                  <span class="details">
+                    Pin Code
+                  </span>
+                <input type="text" placeholder="Pin Code" maxlength="6" name="pincode" id="pincode" oninvalid="this.setCustomValidity('Enter Your pincode!')"
+                oninput="this.setCustomValidity('')"  required>
+               </div>
+
+                <div class="input-box" style="margin-bottom: 3px" >
+                    <span class="details">                   
+                     Address
+                    </span>
+                  <input  type="text" id="address" placeholder="Complete Address" name="address" oninvalid="this.setCustomValidity('Enter Your Complete address!')"
+                  oninput="this.setCustomValidity('')"  required>
+                 </div>
+    
+                 <div class="input-box" style="margin-bottom: 3px">
+                  <span class="details">                   
+                    License Id
+                  </span>
+                    <input type="text" id="license" placeholder="License id" name="license" oninvalid="this.setCustomValidity('Enter Your License Id!')"
+                    oninput="this.setCustomValidity('')"  required>
+                 </div>
+
+                  <div class="input-box" style="margin-bottom: 3px">
+                    <span class="details">                   
+                      GST Number
+                    </span>
+                    <input type="text" id="gstnumber" placeholder="GST Number" name="gstnumber" oninvalid="this.setCustomValidity('Enter GST number!')"
+                    oninput="this.setCustomValidity('')"  required>
+                </div>
+
+                <div class="input-box" style="margin-bottom: 3px">
+                  <span class="details">                   
+                    Opening Time
+                  </span>
+                  <input type="time" id="opening_time" oninvalid="this.setCustomValidity('Enter Your opening time!')"
+                  oninput="this.setCustomValidity('')" required>
+              </div>
+
+              <div class="input-box" style="margin-bottom: 3px">
+                <span class="details">                   
+                 Closing Time
+                </span>
+                <input type="time" id="closing_time" oninvalid="this.setCustomValidity('Enter Your closing time!')"
+                oninput="this.setCustomValidity('')"  required>
+            </div>
+          </div>
+          <div class="user-details">
+            <div class="input-box">
+              <select id="role"  required class="form-control" onchange = "checkCategory()" >
+                <option value="">Is Your Billing address is same as your address</option>
+                <option value="yes">yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+
+            <div class="input-box">
+              <select id="mobiletype"  required class="form-control" onchange = "checkmobileType()" >
+              <option value="">Please select your mobile type</option>
+              <option value="landline">Landline Number</option>
+              <option value="mobile">Mobile Number</option>
+              </select>
+          </div>
+          </div>
+          <div class="user-details">
+            <div class="input-box" style="margin-bottom: 3px ; display: none;" id="billing" >
+              <span class="details">                   
+               Billing Address
+              </span>
+            <input  type="text" id="baddress" placeholder="Complete billing address" name="baddress" oninvalid="this.setCustomValidity('Enter Your Billing Address!')"
+            oninput="this.setCustomValidity('')"  >
+           </div>
+
+           <div class="input-box" style="margin-bottom: 3px ; display: none;" id="lannum" >
+            <span class="details">                   
+             Landline Number
+            </span>
+            <input  type="tel" pattern="^\d{4}\d{3}\d{4}$" id="lnum" placeholder="Landline Number" name="landline"  maxlength="11"  oninvalid="this.setCustomValidity('Enter Your Landline Number!')"
+            oninput="this.setCustomValidity('')"  >
+         </div>
+
+         <div class="input-box" style="margin-bottom: 3px ; display: none;" id="mobilenum" >
+          <span class="details">                   
+           Mobile Number
+          </span>
+          <input  type="text" id="mnum" placeholder="Mobile Number" name="mobile" maxlength="10" name="mobilenum" pattern="[1-9]{1}[0-9]{9}"  oninvalid="this.setCustomValidity('Enter Your Mobile Number!')"
+          oninput="this.setCustomValidity('')"  >
+       </div>
+
+      </div>
+       
+               
+              <div id="messageverify" style="font: bold; color: red;  display: flex; justify-content: center;"></div>
+              <div class="button" onclick="resturantForm()" style="margin: 14px 0;">
+                <input type="submit" value="Save">
+              </div>
+             
+            </form>
+          </div>
+        </div>
+      </div>
+   </div>
+       
+      </div>
+    
+
+  </main>
+
+  <!-- SCRIPTS -->
+  <!-- Global Required Scripts Start -->
+  
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/perfect-scrollbar.js"> </script>
+  <script src="assets/js/jquery-ui.min.js"> </script>
+
+  <!-- Global Required Scripts End -->
+  <script src="assets/js/resturantform.js"></script>
+  <!-- Foodtech core JavaScript -->
+  <script src="assets/js/framework.js"></script>
+
+  <!-- Settings -->
+  <script src="assets/js/settings.js"></script>
+
+</body>
+
+</html>

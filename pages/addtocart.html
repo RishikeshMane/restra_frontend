@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Add To Cart</title>
+  <!-- Iconic Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../vendors/iconic-fonts/flat-icons/flaticon.css">
+  <link rel="stylesheet" href="../vendors/iconic-fonts/cryptocoins/cryptocoins.css">
+  <link rel="stylesheet" href="../vendors/iconic-fonts/cryptocoins/cryptocoins-colors.css">
+  
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jQuery UI -->
+  <link href="../assets/css/jquery-ui.min.css" rel="stylesheet">
+  <!-- Page Specific CSS (Slick Slider.css) -->
+  <link href="../assets/css/slick.css" rel="stylesheet">
+  <link href="../assets/css/datatables.min.css" rel="stylesheet">
+  <!-- Foodtech styles -->
+  <!-- <link href="../assets/css/style.css" rel="stylesheet"> -->
+  <link href="../assets/css/addtocart.css" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/fav.png">
+
+</head>
+
+<body >
+  <main class="body-content">
+    <div class="ms-content-wrapper ms-auth">
+        <div class="ms-auth-container">
+            <div class="container-fluid">
+                <div class="row">
+                    <aside class="col-lg-9">
+                        <div class="card">
+                            <div class="table-responsive">
+                                <table class="table table-borderless table-shopping-cart">
+                                    <thead class="text-muted">
+                                        <tr class="small text-uppercase">
+                                            <th scope="col" >Product</th>
+                                            <th scope="col" width="120" >Year</th>
+                                            <th scope="col" width="120" >Price</th>
+                                            <th scope="col" class="text-right d-none d-md-block" width="200"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="data">
+                                        <tr>
+                                           
+                                        </tr>
+                                        <!-- <tr>
+                                            <td>
+                                                <figure class="itemside align-items-center">
+                                                    <div class="aside"><img src="../assets/img/burger.jfif" class="img-sm"></div>
+                                                    <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">BURGER</a>
+                                                        <p class="text-muted small">Type: Veg <br>Description : Cheese</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </td>
+                                            <td> <select class="form-control" >
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select> </td>
+                                            <td>
+                                                <div class="price-wrap"> <var class="price">$15</var> <small class="text-muted"> $12 each </small> </div>
+                                            </td>
+                                            <td class="text-right d-none d-md-block"> 
+                                               
+                                                 <a href="" class="btn btn-light btn-round" data-abc="true"> Remove</a> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <figure class="itemside align-items-center">
+                                                    <div class="aside"><img src="../assets/img/pizza.jfif" class="img-sm"></div>
+                                                    <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">PIZZA</a>
+                                                        <p class="text-muted small">Type: Veg <br>Description : Cheese</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </td>
+                                            <td> <select class="form-control">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select> </td>
+                                            <td>
+                                                <div class="price-wrap"> <var class="price">$9</var> <small class="text-muted"> $6 each</small> </div>
+                                            </td>
+                                            <td class="text-right d-none d-md-block"> 
+                                               
+                                                 <a href="" class="btn btn-light btn-round" data-abc="true"> Remove</a> </td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </aside>
+                    <aside class="col-lg-3">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <form id="form">
+                                    <div class="form-group"> <label>Have coupon?</label>
+                                        <div class="input-group"> <input type="text" id="couponcode" class="form-control coupon" required name="couponcode" placeholder="Coupon code"> <span class="input-group-append">
+                                        <button class="btn btn-primary btn-apply coupon" onclick="apply()">Apply</button> 
+                                    </span> </div>
+                                    </div>
+                                </form>
+                                <div id="messageverify" style="font: bold; color: red;  display: flex; justify-content: center;"></div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                 <a href="" class="btn btn-light" style="background-color: #0b7e0efa;" data-abc="true" onclick="show()">Proceed To Pay </a> 
+                             </div>
+                        </div>
+                        <br>
+                        <div class="card" id="purchasediv" style="display: none;">
+                            <div class="card-body">
+                                <dl class="dlist-align">
+                                    <dt>Total price:</dt>
+                                    <dd class="text-right ml-3" >₹<a id="totalprice"></a></dd>
+                                </dl>
+                                <dl class="dlist-align">
+                                    <dt>Discount:</dt>
+                                    <dd class="text-right text-danger ml-3" ><a id="discount">0</a><a>%</a></dd>
+                                </dl>
+                                <dl class="dlist-align">
+                                    <dt>Total:</dt>
+                                    <dd class="text-right text-dark b ml-3"><strong id="discountedtotal">$59.97</strong></dd>
+                                </dl>
+                                <hr> <a href="#" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"  onclick="" id = "rzp-button1"> Make Purchase </a> 
+                                <!-- <a href="#" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a> -->
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+         
+        </div>
+       
+  <!-- SCRIPTS -->
+  <!-- Global Required Scripts Start -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="../assets/js/axios.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"></script> -->
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/perfect-scrollbar.js">
+  </script>
+  <script src="../assets/js/jquery-ui.min.js">
+  </script>
+  <script src="../assets/js/login.js"></script>
+  <script src="../assets/js/register.js"></script>
+  <script src="../assets/js/changepass.js"></script>
+  <script src="../assets/js/forgetpass.js"></script>
+  <script src="../assets/js/addtocart.js"></script>
+  <script>
+document.getElementById('rzp-button1').onclick = function(e){
+    var cupon = JSON.parse(window.localStorage.getItem('coupondata'));
+//    console.log(cupon.Coupon);
+    coupon = cupon.Coupon
+    axios.post("http://162.240.56.117:5000/makepayment/"+ coupon).then((info)=> {
+    //   console.log(info);
+      window.localStorage.setItem('infoData' , JSON.stringify(info))
+      var regData = JSON.parse(window.localStorage.getItem('registerdata'))
+      var options = {
+        key: "rzp_test_ebChzO2RkUqVoT", // Enter the Key ID generated from the Dashboard
+        name: "Konnectogrow",
+        description: "Test Transaction",
+        image: "../assets/img/fav.png",
+        order_id: info.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        callback_url: "http://kodever.co.in/resturant/pages/invoice.html",
+        prefill: {
+          name: regData.fname,
+          email: regData.email,
+          contact: regData.phoneno,
+        },
+        notes: {
+          address: regData.address,
+        },
+        theme: {
+          color: "#fa8e02",
+        },
+    
+      };
+var rzp1 = new Razorpay(options);
+// console.log(options);
+var regData = JSON.parse(window.localStorage.getItem('registerdata'))
+var infodata = JSON.parse(window.localStorage.getItem('infoData'));
+var subdata = JSON.parse(window.localStorage.getItem('addtocartarray'));
+subdata.forEach((itemData, i) => {
+// console.log(itemData.OrderName);
+window.localStorage.setItem('packagename', itemData.OrderName)
+});
+const data = {
+    "id":regData.userid,
+    "restid": window.localStorage.getItem('resturantid'),
+    "receiptno":infodata.data.receipt,
+    "name":options.prefill.name,
+    "amount": infodata.data.amount,
+    "address": options.notes.address,
+    "phoneno":options.prefill.contact,
+    "email":options.prefill.email,
+    "months":document.getElementById('ddlViewBy').value,
+    "product": window.localStorage.getItem('packagename'),
+    "accountno":"345",
+    
+    };
+    // console.log(JSON.stringify(data));
+try {
+
+// Options to be given as parameter
+// in fetch for making requests
+// other then GET
+const api = 'http://162.240.56.117:5000/transcompleterestra'
+
+let options = {
+    method: 'POST',
+    headers: {"Access-Control-Allow-Origin" : "*",
+        'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: JSON.stringify(data)
+}
+
+// Fake api for making post requests
+let fetchRes = fetch(
+    api,
+    options);
+fetchRes.then(res => {
+    return res.json();
+}).then((data) => {
+    // console.log(data);
+})
+
+} catch (e) {
+// console.log(e);
+}
+
+rzp1.open();
+  e.preventDefault();
+});
+    }
+  </script>
+  <!-- Global Required Scripts End -->
+  <!-- Page Specific Scripts Start -->
+  <!-- <script src="../assets/js/Chart.bundle.min.js">
+  </script>
+  <script src="../assets/js/widgets.js"> </script>
+  <script src="../assets/js/clients.js">
+  </script>
+  <script src="../assets/js/Chart.Financial.js">
+  </script>
+  <script src="../assets/js/d3.v3.min.js">
+  </script>
+  <script src="../assets/js/topojson.v1.min.js">
+  </script>
+  <script src="../assets/js/datatables.min.js">
+  </script>
+  <script src="../assets/js/data-tables.js">
+  </script> -->
+  <!-- Page Specific Scripts Finish -->
+  <!-- Foodtech core JavaScript -->
+  <script src="../assets/js/framework.js"></script>
+  <!-- Settings -->
+  <script src="../assets/js/settings.js"></script>
+</body>
+
+</html>

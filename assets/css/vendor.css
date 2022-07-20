@@ -1,0 +1,342 @@
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  }
+  .container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+  }
+  .container .title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+  .content form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+  }
+  form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+  }
+  form .user-details .box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+  
+  }
+  form .input-box span.details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .verifyemailbtn {
+      /* border: none;
+      background-color: transparent;
+      outline: none; */
+      color: rgb(247, 144, 10);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  }
+  .verifyemailbtn:focus {
+      border: none;
+  }
+  .user-details .input-box input{
+    height: 45px;
+    width: 90%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+  .user-details .input-box input:focus,
+  .user-details .input-box input:valid{
+    border-color: #9b59b6;
+  }
+   form .gender-details .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+   }
+   form .category{
+     display: flex;
+     width: 80%;
+     margin: 14px 0 ;
+     justify-content: space-between;
+   }
+   form .category label{
+     display: flex;
+     align-items: center;
+     cursor: pointer;
+   }
+   form .category label .dot{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: #d9d9d9;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+  }
+   #dot-1:checked ~ .category label .one,
+   #dot-2:checked ~ .category label .two,
+   #dot-3:checked ~ .category label .three{
+     background: #9b59b6;
+     border-color: #d9d9d9;
+   }
+   form input[type="radio"]{
+     display: none;
+   }
+   form .button{
+     height: 45px;
+     margin: 35px 0
+   }
+   form .button input{
+     height: 100%;
+     width: 100%;
+     border-radius: 5px;
+     border: none;
+     color: #fff;
+     font-size: 18px;
+     font-weight: 500;
+     letter-spacing: 1px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     background: linear-gradient(135deg, #71b7e6, #9b59b6);
+   }
+   form .button input:hover{
+    /* transform: scale(0.99); */
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+    }
+   @media(max-width: 584px){
+   .container{
+    max-width: 100%;
+  }
+  form .user-details .input-box{
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    form .category{
+      width: 100%;
+    }
+    .content form .user-details{
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar{
+      width: 5px;
+    }
+    }
+    @media(max-width: 459px){
+    .container .content .category{
+      flex-direction: column;
+    }
+  }
+  
+  /* {
+    box-sizing: border-box;} */
+  
+  /* Button used to open the contact form - fixed at the bottom of the page */
+  .open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+  }
+  
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    z-index: 9;
+        margin: 20px;
+    /* bottom: 0; */
+    right: 116px;
+    /* border: 3px solid #f1f1f1; */
+  }
+  .choose-popup {
+    display: none;
+    position: fixed;
+    bottom: 50%;
+    right: 100px;
+    /* border: 3px solid #f1f1f1; */
+    z-index: 9;
+  }
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 100%;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    border-radius: 45px;
+    border: none;
+    cursor: pointer; 
+    margin-bottom:15px;
+    opacity: 0.8;
+    
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+  
+
+.center {
+    position: relative;
+    /* top: 50px; */
+    margin: 10px;
+    left: 40px;
+    height: 275px;
+    width: 240px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+}
+.profile {
+    height: 320px;
+    text-align: center;
+}
+.profile .image {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin: auto ;
+}
+.profile .image .circle-1, .profile .image .circle-2 {
+    position: absolute;
+    box-sizing: border-box;
+    width: 76px;
+    height: 76px;
+    top: -3px;
+    left: -3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #786450 #786450 #786450 transparent;
+    border-radius: 50%;
+    transition: all 1.5s ease-in-out;
+}
+.profile .image .circle-2 {
+    width: 82px;
+    height: 82px;
+    top: -6px;
+    left: -6px;
+    border-color: #786450 transparent #786450 #786450;
+}
+.profile .image img {
+    display: block;
+    border-radius: 50%;
+    background: #f5e8df;
+}
+.profile .image:hover {
+    cursor: pointer;
+}
+.profile .image:hover .circle-1, .profile .image:hover .image .circle-2, .profile .image .image:hover .circle-2 {
+    transform: rotate(360deg);
+}
+.profile .image:hover .circle-2 {
+    transform: rotate(-360deg);
+}
+.profile .name {
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.profile .job {
+    font-size: 11px;
+    line-height: 15px;
+}
+.profile .actions {
+    margin-top: 33px;
+}
+.profile .actions .btn {
+    display: block;
+    width: 120px;
+    height: 30px;
+    margin: 0 auto 10px auto;
+    background: none;
+    border: 1px solid #786450;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    color: #786450;
+}
+.profile .actions .btn:hover {
+    background: #786450;
+    color: #fff;
+}
+.stats {
+    float: left;
+}
+.stats .box {
+    box-sizing: border-box;
+    width: 120px;
+    height: 99px;
+    background: #f5e8df;
+    text-align: center;
+    padding-top: 28px;
+    transition: all 0.4s ease-in-out;
+}
+.stats .box:hover {
+    background: #e1cfc2;
+    cursor: pointer;
+}
+.stats .box:nth-child(2) {
+    margin: 1px 0;
+}
+.stats span {
+    display: block;
+}
+.stats .value {
+    font-size: 18px;
+    font-weight: 600;
+}
+.stats .parameter {
+    font-size: 11px;
+}
